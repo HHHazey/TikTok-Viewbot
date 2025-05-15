@@ -37,19 +37,19 @@ while captcha:
     captcha = False
 
 # Pastes the URL into the "Enter video URL" textbox.
-driver.find_element_by_xpath(
-    '/html/body/div[3]/div[4]/div/div/div/form/div/input'
+driver.find_element(
+    "xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input'
 ).send_keys(VIDEO_URL)
 
 while True:
     # Clicks the "Search" button.
-    driver.find_element_by_xpath('/html/body/div[3]/div[4]/div/div/div/form/div/div/button').click()
+    driver.find_element("xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input').click()
     time.sleep(2)
 
     try:
         # Clicks the "Send Views" button.
-        driver.find_element_by_xpath(
-            '/html/body/div[3]/div[4]/div/div/div/div/div/div[1]/div/form/button'
+        driver.find_element(
+            "xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input'
         ).click()
     except common.exceptions.NoSuchElementException:
         driver.quit()
