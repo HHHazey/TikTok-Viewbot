@@ -24,8 +24,8 @@ captcha = True
 while captcha:
     # Attempts to select the "Views" option.
     try:
-        driver.find_element_by_xpath(
-            '/html/body/div[3]/div[1]/div[3]/div/div[4]/div/button'
+        driver.find_element(
+            "xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input'
         ).click()
     except (
         common.exceptions.NoSuchElementException,
