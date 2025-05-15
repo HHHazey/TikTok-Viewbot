@@ -24,9 +24,7 @@ captcha = True
 while captcha:
     # Attempts to select the "Views" option.
     try:
-        driver.find_element_by_xpath(
-            '/html/body/div[3]/div[1]/div[3]/div/div[4]/div/button'
-        ).click()
+        driver.find_element("xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
     except (
         common.exceptions.NoSuchElementException,
         common.exceptions.ElementClickInterceptedException
@@ -37,20 +35,16 @@ while captcha:
     captcha = False
 
 # Pastes the URL into the "Enter video URL" textbox.
-driver.find_element_by_xpath(
-    '/html/body/div[3]/div[4]/div/div/div/form/div/input'
-).send_keys(VIDEO_URL)
+driver.find_element("xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
 
 while True:
     # Clicks the "Search" button.
-    driver.find_element_by_xpath('/html/body/div[3]/div[4]/div/div/div/form/div/div/button').click()
+    driver.find_element("xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
     time.sleep(2)
 
     try:
         # Clicks the "Send Views" button.
-        driver.find_element_by_xpath(
-            '/html/body/div[3]/div[4]/div/div/div/div/div/div[1]/div/form/button'
-        ).click()
+      driver.find_element("xpath", '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
     except common.exceptions.NoSuchElementException:
         driver.quit()
         os.system('cls')
